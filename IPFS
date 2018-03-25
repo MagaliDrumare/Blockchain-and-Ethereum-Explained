@@ -1,0 +1,46 @@
+IPFS Interplanetary File System by Siraj Raval 
+https://youtu.be/BA2rHlbB5i0
+ 
+IPFS website 
+https://ipfs.io/
+
+IPFS Alpha Démo 
+https://youtu.be/8CMxDNuuAiQ
+
+Stanford Seminar - IPFS and the Permanent Web
+https://youtu.be/HUVmypx9HGI
+
+
+#  Need to replace http
+-> Replace client-server protocol. 
+-> Solve Bandwidth -> slow 
+-> Solve Latency -> distance from the servers 
+-> Solve Resiliency : http broken all the time -> imparmanent 
+-> Solve Centralization 
+-> Avoid Censorship 
+
+# Time to move to IPFS (opensource project)
+-> move toward the permanent address 
+-> Content address 
+upload a file to IPFS you got it's immutable hash 
+
+# Store Data DHT 
+-> Use Distributed Hash Table 
+-> As Chord : a protocol and algorithm for a peer to peer distributed hash table. 
+-> Data is stored on node of a distributed network using Key result of hash function. 
+
+# Bitswap exchange protocol 
+-> Data exchange between this nodes 
+-> inspired by BitTorrent 
+-> Download data from different sources. 
+
+# Data Structure MerkleDag 
+-> Series of nodes connected together in a form of connected graph 
+(tree) 
+
+-> Install IPFS client on the Mac 
+https://ipfs.io/docs/install
+
+
+
+
