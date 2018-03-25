@@ -1,4 +1,5 @@
-# Blockchain-and-Ethereum-Explained by Siraj Raval
+### Blockchain-and-Ethereum-Explained by Siraj Raval
+- Notes @ https://goo.gl/D4MgLu
 
 ### Vidéo : Web 3.0 Explained 
 - https://youtu.be/aPVmd7SyKfQ
