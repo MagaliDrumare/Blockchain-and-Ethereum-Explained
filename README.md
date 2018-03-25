@@ -9,6 +9,6 @@
 ### Vidéo : Ethereum Explained
 - https://youtu.be/-_Qs0XdPpw8
 
-## A Guide to Building Your First Decentralized Application
+### A Guide to Building Your First Decentralized Application
 - https://youtu.be/gSQXq2_j-mw
 
