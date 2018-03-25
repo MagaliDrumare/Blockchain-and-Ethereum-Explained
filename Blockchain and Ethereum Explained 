@@ -1,0 +1,294 @@
+Vidéo :Web 3.0 Explained 
+https://youtu.be/aPVmd7SyKfQ
+
+# Why we need web 3.0 ? 
+-> few companies control the internet 
+-> shinkring economy : uderpaid and underclass 
+-> data ownership : you don't own your data
+-> attention economy : aim is to optimize the attention 
+-> artificial general intelligence AGI : need of DAO distributed autonomous organization. 
+-> data permanence 
+
+# What is now possible ? 
+-> Create a decentralized application 
+-> Create an open source and profitable 
+-> Community governed / controlled
+-> Censorship resistant 
+
+# How do we get started? 
+-> A glorified linked List data structure is call a blockchain 
+-> Can not change the data inside the blockchain 
+
+#Proof of work mechanism ? 
+-> Propose transaction -> hash it SHA256 algorithm 
+-> Miner is doing the calculation regarding a specific threehold. 
+<-> Miner needs to find the valid Nonce (number only use once) 
+-> Each block depends on the previous hash value of the previous block 
+
+# What is Web 3.0 Stack ? 
+-> Comptation : Ethereum , Truebit (instead of Amazon EC2, Heroku)
+-> File storage : Storj, IPFS (instead of Amazon S3, Google Cloud)
+-> External Data : Oracles (instead of 3rd party Api)
+-> Monetization : Token Model (instead of adds )
+-> Payments : Bitcoin, Litecoin, Ethereum (insted of Visa, Paypal)
+
+
+# The Ethereum Blockchain 
+-> Create Blockchain where we can store code inside of and transsaction. 
+It's a decentralized Heroku : https://www.heroku.com
+Language of Ethereum is Solidity 
+Solidity in the web browser : https://remix.ethereum.org/#optimize=false&version=builtin
+
+
+# Code takes the form of small contracts 
+
+------------------
+How does Blockchain Work ? 
+https://youtu.be/LZEHOlZY2To
+
+-> Blockchain allow machines to agree on value transfer without having to trust the central authority. 
+
+Future use cases : 
+-> Use case 1 : giving datasets and models a reputation. 
+https://qz.com/929833/googles-goog-deepmind-is-using-blockchain-technology-to-handle-nhs-medical-data/
+https://deepmind.com/blog/trust-confidence-verifiable-data-audit/
+
+-> Use case 2: Peer to Peer Model Model Training 
+instead of Cloud renting of the computing power against tensorcoin? (prospective)
+
+-> Use case 3 :  self-driving network system maintain completly by AI (perspective)
+
+-> Each block reprensents a single transaction = value transfert between 2 machines. 
+-> Hashing 
+https://blockgeeks.com/guides/what-is-hashing/
+A block has two hash values : one from the previous hash, one for its own hash 
+Hashes give blocks a unique ID + data integrity. 
+sha256 is an hashing function generating a 256 bytes signature. 
+
+-> Proof of work algorithm to validate the blockchain / miners must complete a proof of work which covers all data in the block. => Concensus. 
+https://youtu.be/SiKnWBPkQ4I
+
+
+-----------------------
+Video : What are smart Contrats?  
+https://youtu.be/dP0-8D2fSb8
+https://github.com/llSourcell/proof_of_existence_demo
+
+Proof of existence : existence of any document 
+No need of third party 
+-> Ethereum most interesting is a cryptocurrency like Bitcoin but has its own programming language that allow to build smart contracts : solidity. 
+-> Small contract is a peace of code that is stored on the blockchain. 
+-> The small contract defines the condition to which all part is defining the contract.
+-> Gas is used to calculated the price of the transaction. If the code of the small contract is optimum, the gas for the execution of the small contract on the blockchain is reduced. 
+-> A contract triggers an event -> an external app (oracle) can listen this event-> retrieve the data from the API-> add a transaction with the result to the contract. 
+
+-> TestRPC run 10 new adresses. 
+-> Solidity to write the small contract 
+-> Truffle to deploy it on the Blockchain 
+With two commands: 
+-> truffle compile 
+-> truffle migrate 
+-> Contracts written in solidity have states and functions. 
+-> Read only function : read state, perform computation, return value 
+-> Function that perform a state change or move funds. 
+
+Summary 
+A smart contract is a trustless, immutable code stored and run on a blockchain. 
+Ethereum is currently the most developped platform building smart contract. 
+
+
+-----------------------
+Vidéo : Ethereum Explained
+https://youtu.be/-_Qs0XdPpw8
+https://github.com/llSourcell/ethereum_demo
+
+Dapp : decentralized App. 
+-> no third party that is taking a fee. 
+-You can store small contracts 
+-Ethereum is a programmable blockchain 
+
+-Structrure from the bottom 
+> Blockchain 2.0 
+> Storage and Content Delivery (normally we use AWS, Google Cloud, Stored Data)-> in that case descentralized storage P2P such as IPFS https://ipfs.io/
+> Computation decentralized on the Blockchain by small contracts. 
+> Applications level constructs : identity, reputation...
+> on the top of that dApp 
+
+-Dapp examples : 
+http://weifund.io : crowd-funding
+http://www.augur.net/ : prediction markets
+ https://www.provenance.org/: trust in their goods and supply chain. 
+
+Ethereum Ecosystem : 
+-ETH cryptocurrency 
+-Ethereum Virtual Machine -> Decentralized computation. 
+-Solidity-> Smart contract programming languages. 
+-Ethereum client geth in GO. 
+
+*** Workflow to deploy Smart Contracts : 
+-download the Ethereum node 
+-write the solidity code 
+-compile the code with the framework truffle
+-deploy the contract to the network and call the smart contract with web3.js that is the front end client who is speaking with the blockchain. 
+
+->Install the Test Blockchain 
+$ npm install -g ethereumjs-testrpc
+-> Install Truffle (smart contract framework)
+$ npm install -g truffle
+-> After the intallation of Truffle, run the testrpc 
+
+-> small contract in solidity : Conferences.sol 
+32 lines (21 sloc)  535 Bytes
+contract Conference {
+
+ 	address public organizer;
+ 	mapping (address => uint) public registrantsPaid;
+ 	uint public numRegistrants;
+ 	uint public quota;
+
+  event Deposit(address _from, uint _amount);
+ 	event Refund(address _to, uint _amount);
+
+ 	function Conference() {
+
+ 		organizer = msg.sender;
+ 		quota = 100;
+ 		numRegistrants = 0;
+ 	}
+
+
+ 	function buyTicket() public {
+ 		if(numRegistrants >= quota) {
+ 			throw;
+ 		}
+
+ 		registrantsPaid[msg.sender] = msg.value;
+ 		numRegistrants++;
+ 		Deposit(msg.sender, msg.value);
+ 	}
+
+}
+
+-> call the small contract placed on the Blockchain from app.js 
+
+-> $ truffle compile
+-> $ truffle migrate
+-> $ truffle test
+
+------------------------
+A Guide to Building Your First Decentralized Application
+https://youtu.be/gSQXq2_j-mw
+
+-> Web started off decentralized own server 
+-> Then data started to beacome centralized 
+-> All data is routed to central nodes : 
+Amazon, Google, SnapChat, Facebook, Instagram, Uber
+
+-> This is bad....
+great value to our lives but 
+#shrinking the economy : ownership of data is too centralized and only few person can value their own data. 
+# To much concentrated power : Uber God mode. 
+https://www.theguardian.com/technology/2016/dec/13/uber-employees-spying-ex-partners-politicians-beyonce
+# No control of the use of our data
+# We should be paid for our data 
+Book to read on the subject : "Who owns the future?"" Jarin lanier
+
+-> Centralized, Decentralized vs Distributed 
+# Centralized : a server and a bunch of clients connected to that server (Facebook, etc...all the web). single point of failure. 
+# Distributed : computation is spread out all the network. Speed the computation, reduce bandwith...
+# Decentralized : take away one of the node and the networl will still work. All node have the same authority.(Cryptocurrencies) 
+Bitcoin is distributed and decentralized 
+
+			        	Web 2.0 Stack     <->   Web 3.0 Stack (dApps)
+Scalable computation      Amazon EC2            Ethereum, Truebit  
+File Storage 			  Amazon S3             IPFS 
+External Data             3rd Party API         Oracle (Augur)
+Monetization              Ads,sellings goods    Token model 
+Payments                  Credit Cards, Paypal  Ethereum/ Bitcoin 
+
+-> Example of decentralized App : https://steem.io/
+
+-> Decentralized concensus 
+# The use of a proof of algorithm to maintain concensus 
+# Distributed Hash Table to store data (concensus)
+# Blockchain for App level construct (usernames, status updates, high scores)
+# DHT + Blockchain is powerfull. 
+# Smart Contracts .sol push to the Blockchain. Every miner have a copy of that code which is immutable.  
+
+
+-> IPFS : Replacement for the http. 
+# No IP -> replace by content address like GIT 
+# Links never died -> watch the video. 
+# IPFS is a giant tree. 
+
+-> Create Decentralized App 
+#step 1 - set up environment Ethereum 
+#step 2 - create a smart contract to deploy the small contract on the blockchain 
+#step 3 - access to the small contract via Nodejs Console / Web3js
+#step 4 - create a GUI interface (graphical user interface)
+
+-> Step 1 : Environment of test 
+in the console > cd YourFirstDecentralisedApplication : npm install ethereumjs-testrpc web3 
+rpc-> test network to test blockchain 
+
+-> Step 2 : Create the small contract 
+Use solidity to programm the small contract 
+You can't change the contract. So if you want to change it you have to upload a new contract. 
+
+-> install the solidity compiler 
+in the console > cd YourFirstDecentralisedApplication : install solc
+-> then code the small contract with solidity 
+pragma solidity ^0.4.11;
+// We have to specify what version of compiler this code will compile with
+
+contract Voting {
+  /* mapping field below is equivalent to an associative array or hash.
+  The key of the mapping is candidate name stored as type bytes32 and value is
+  an unsigned integer to store the vote count
+  */
+  
+  mapping (bytes32 => uint8) public votesReceived;
+  
+  /* Solidity doesn't let you pass in an array of strings in the constructor (yet).
+  We will use an array of bytes32 instead to store the list of candidates
+  */
+  
+  bytes32[] public candidateList;
+
+  /* This is the constructor which will be called once when you
+  deploy the contract to the blockchain. When we deploy the contract,
+  we will pass an array of candidates who will be contesting in the election
+  */
+  function Voting(bytes32[] candidateNames) {
+    candidateList = candidateNames;
+  }
+
+  // This function returns the total votes a candidate has received so far
+  function totalVotesFor(bytes32 candidate) returns (uint8) {
+    if (validCandidate(candidate) == false) throw;
+    return votesReceived[candidate];
+  }
+
+  // This function increments the vote count for the specified candidate. This
+  // is equivalent to casting a vote
+  function voteForCandidate(bytes32 candidate) {
+    if (validCandidate(candidate) == false) throw;
+    votesReceived[candidate] += 1;
+  }
+
+  function validCandidate(bytes32 candidate) returns (bool) {
+    for(uint i = 0; i < candidateList.length; i++) {
+      if (candidateList[i] == candidate) {
+        return true;
+      }
+    }
+    return false;
+  }
+}
+
+The code on GitHub 
+https://github.com/llSourcell/Your_First_Decentralized_Application
+-> small contract : voting.dol 
+-> client : index.html
+-> access to the small contract from the client : index.js 
+
