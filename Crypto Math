@@ -1,0 +1,52 @@
+Crypto Math 
+https://youtu.be/tK3wuQN9MHE
+
+# What is Cryptography? 
+-> Sentence -> Cipher 
+-> Cryptography deals with encryption, decryption, hashing ans digital signatures. 
+
+# Encryption 
+->Symmetric cryptography, asymmetric cryptography, hashing 
+encrypt with public key 
+decrypt with private key 
+-> Symetric cryptography, asymetric cryptography and hashing. 
+-> One key on both sides encryption and decryption = symetric. 
+-> Two different keys [public and secret/private key] on both sides = asymetric. 
+-> Static Hash function : convert key into a hash. 
+
+
+# Digital signatures => proof of ownership. 
+-> Use of a private and a public keys for encryption and a private key for decryption. 
+
+# Example of cryptography. 
+-> https 
+-> whatsapp : the server can't read what happen with the two parties. 
+-> OpenMined for AI. 
+-> Today : AI at the edges + man at the center (Uber)
+-> Tomorrow : AI at the center and the edges -> Need to trust the AI through blockchain and encryption. 
+
+# Zero Knowledge proof (ZKP)
+->How I prove I know something without telling what I know? 
+-> Proof of statement : convincing the verifier that a statement is true without yielding anay other information. 
+-> Proof of knowledge : convincing the verifier one knows a secret 
+Cryptography is mainly based on proof of knowledge. 
+
+# zkSNARKS 
+-> zero-knowledge Succint Non-interactive aRguments of Knowledge. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
