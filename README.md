@@ -21,6 +21,10 @@ https://youtu.be/dP0-8D2fSb8
 - IPFS website : https://ipfs.io/
 - IPFS Alpha Démo : https://youtu.be/8CMxDNuuAiQ
 
+### ICO examples 
+- LiveEdu : https://tokensale.liveedu.tv 
+- Dorado : https://www.dorado.tech/fr/
+
 
 
 
